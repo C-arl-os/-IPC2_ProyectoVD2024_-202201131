@@ -1,0 +1,8 @@
+digraph G {
+    rankdir="RL";
+    label="Cola";
+    node[shape=box];
+    nodo0[label="ID: 3\nXML: C:/Users/sanci/Desktop/proyectopracticas/Proyecto 1/Clase8/Entradas/Imagenes/rana.xml\nID Solicitante: IPC-001"];
+nodo1[label="ID: 3\nXML: C:/Users/sanci/Desktop/proyectopracticas/Proyecto 1/Clase8/Entradas/Imagenes/rana.xml\nID Solicitante: IPC-001"];
+nodo0 -> nodo1;
+}

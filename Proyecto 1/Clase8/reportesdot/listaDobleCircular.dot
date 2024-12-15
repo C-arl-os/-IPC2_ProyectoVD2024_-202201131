@@ -1,0 +1,6 @@
+digraph G {
+    rankdir=LR;
+    node[shape=record, height=.1]
+    nodo0[label="{<f1>|ID: 3\nNombre: Rana\nRuta imagen: c:\Users\sanci\Desktop\proyectopracticas\Proyecto 1\Clase8\reportes\matrizDispersa_3.svg\n|<f2>}"];
+nodo0:f1 -> nodo0:f2 [dir=both constraint=false];
+}
