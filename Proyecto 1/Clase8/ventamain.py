@@ -174,10 +174,10 @@ def ventana_artista():
     boton1 = tk.Button(frame1, text="Aceptar", width=20, height=2, bg="blue",command=AceptarSolicitud)
     boton1.place(x=50, y=50)
 
-    boton2 = tk.Button(frame1, text="Ver Cola", width=20, height=2, bg="orange")
+    boton2 = tk.Button(frame1, text="Ver Cola", width=20, height=2, bg="orange",command=lambda: graficar_cola(ventana_artista))
     boton2.place(x=50, y=150)
 
-    boton3 = tk.Button(frame1, text="Imágenes Solicitadas", width=20, height=2, bg="orange")
+    boton3 = tk.Button(frame1, text="Imágenes Solicitadas", width=20, height=2, bg="orange",command=lambda: graficar_lista_circular(ventana_artista))
     boton3.place(x=50, y=200)
 
     boton_cerrar = tk.Button(frame1, text="Cerrar", command=lambda: cerrar_ventana_y_mostrar(ventana_artista, ventana_login), bg="red", fg="white")
@@ -219,6 +219,72 @@ def AceptarSolicitud():
     nueva_imagen = Imagen(solicitud_aceptada.id,nombre_figura,ruta)
     #insertamos el objeto a la lista doble del usuario
     listaSolicitantes.insertarImagenUsuario(solicitud_aceptada.id_solicitante,nueva_imagen)
+    
+def graficar_lista_circular(ventana_artista):
+    global id_logueado
+    artista = listaArtistas.obtenerUsuario(id_logueado)
+    artista.procesadas.graficar()
+    
+    ruta_imagen = r"C:\Users\sanci\Desktop\proyectopracticas\Proyecto 1\Clase8\reportes\listaCircular.png"
+    try:
+        # Abrir la imagen
+        imagen = Image.open(ruta_imagen)
+        imagen = imagen.resize((400, 200), Image.LANCZOS)  # Redimensionar la imagen a 400x400
+        imagen_tk = ImageTk.PhotoImage(imagen)
+
+        # Crear un Label para mostrar la imagen
+        label_image = tk.Label(ventana_artista, image=imagen_tk)  # Usa la ventana de reporte
+        label_image.image = imagen_tk  # Mantener una referencia a la imagen
+        label_image.place(x=300,y=150)  # Empaquetar el Label de la imagen
+
+    except FileNotFoundError:
+        messagebox.showerror("Error", f"No se pudo encontrar la imagen en la ruta: {ruta_imagen}")
+    except Exception as e:
+        messagebox.showerror("Error", str(e))
+    
+def graficar_cola(ventana_artista):
+    global id_logueado
+    colaSolicitudes.graficar()
+    #solicitante: Solicitante = listaSolicitantes.buscar(id_logueado)
+    #if solicitante is None:
+     #   print("No se encontró un solicitante con el ID:", id_logueado)
+      #  return  # O maneja el error de otra manera
+    ruta_imagen = r"C:\Users\sanci\Desktop\proyectopracticas\Proyecto 1\Clase8\reportes\cola.png"
+    try:
+        # Abrir la imagen
+        imagen = Image.open(ruta_imagen)
+        imagen = imagen.resize((400, 200), Image.LANCZOS)  # Redimensionar la imagen a 400x400
+        imagen_tk = ImageTk.PhotoImage(imagen)
+
+        # Crear un Label para mostrar la imagen
+        label_image = tk.Label(ventana_artista, image=imagen_tk)  # Usa la ventana de reporte
+        label_image.image = imagen_tk  # Mantener una referencia a la imagen
+        label_image.place(x=300,y=150)  # Empaquetar el Label de la imagen
+
+    except FileNotFoundError:
+        messagebox.showerror("Error", f"No se pudo encontrar la imagen en la ruta: {ruta_imagen}")
+    except Exception as e:
+        messagebox.showerror("Error", str(e))
+    
+    
+    # Cargar y mostrar la imagen
+    ruta_imagen = r"C:\Users\sanci\Desktop\proyectopracticas\Proyecto 1\Clase8\reportes\cola.png"
+    try:
+        # Abrir la imagen
+        imagen = Image.open(ruta_imagen)
+        imagen = imagen.resize((400, 200), Image.LANCZOS)  # Redimensionar la imagen a 400x400
+        imagen_tk = ImageTk.PhotoImage(imagen)
+
+        # Crear un Label para mostrar la imagen
+        label_image = tk.Label(ventana_artista, image=imagen_tk)  # Usa la ventana de reporte
+        label_image.image = imagen_tk  # Mantener una referencia a la imagen
+        label_image.place(x=300,y=150)  # Empaquetar el Label de la imagen
+
+    except FileNotFoundError:
+        messagebox.showerror("Error", f"No se pudo encontrar la imagen en la ruta: {ruta_imagen}")
+    except Exception as e:
+        messagebox.showerror("Error", str(e))
+    
 
 def ventana_galeria(ventana_solicitante):
     ventana_solicitante.withdraw()  # Oculta la ventana de solicitante

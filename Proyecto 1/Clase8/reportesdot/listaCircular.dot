@@ -2,7 +2,5 @@ digraph G {
     rankdir=LR;
     node[shape=record, height=.1]
 nodo0[label="{ID: 3\nXML: C:/Users/sanci/Desktop/proyectopracticas/Proyecto 1/Clase8/Entradas/Imagenes/rana.xml\nID Solicitante: IPC-001|<f1>}"];
-nodo1[label="{ID: 2\nXML: C:/Users/sanci/Desktop/proyectopracticas/Proyecto 1/Clase8/Entradas/Imagenes/capibara.xml\nID Solicitante: IPC-001|<f1>}"];
-nodo0 -> nodo1;
-nodo1 -> nodo0[constraint=false];
+nodo0 -> nodo0[constraint=false];
 }
