@@ -1,0 +1,7 @@
+digraph G {
+        rankdir="RL";
+        label="Cola Vacía";
+        node[shape=box];
+        nodo0[label="Cola Vacía"];
+    }
+    

@@ -58,6 +58,33 @@ class Cola:
     
     #5. GRAFICAR
     def graficar(self):
+        if self.isEmpty():  # Verifica si la cola está vacía
+            print("La cola está vacía. Generando representación de cola vacía.")
+            
+            # Generar un gráfico para la cola vacía
+            codigodot = '''digraph G {
+        rankdir="RL";
+        label="Cola Vacía";
+        node[shape=box];
+        nodo0[label="Cola Vacía"];
+    }
+    '''
+            # Crear nuestro archivo dot
+            ruta_dot = 'reportesdot/cola_vacia.dot'
+            archivo = open(ruta_dot, 'w')
+            archivo.write(codigodot)
+            archivo.close()
+
+            # Generamos la imagen
+            ruta_imagen = 'reportes/cola_vacia.png'
+            comando = 'dot -Tpng ' + ruta_dot + ' -o ' + ruta_imagen
+            os.system(comando)
+
+            # Abrimos la imagen
+            ruta2 = os.path.abspath(ruta_imagen)
+            os.startfile(ruta2)
+            return  # Sal de la función si la cola está vacía
+#________________________________________________________        
         codigodot = ''
         codigodot +='''digraph G {
     rankdir="RL";
@@ -89,8 +116,8 @@ class Cola:
         archivo.close()
 
         #generamos la imagen
-        ruta_imagen = 'reportes/cola.svg'
-        comando = 'dot -Tsvg '+ruta_dot+' -o '+ruta_imagen
+        ruta_imagen = 'reportes/cola.png'
+        comando = 'dot -Tpng '+ruta_dot+' -o '+ruta_imagen
         os.system(comando)
 
         #abrimos la imagen
