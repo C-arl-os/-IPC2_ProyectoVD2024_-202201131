@@ -1,0 +1,17 @@
+{% extends "admin.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin/xmlusers.css' %}">
+<div class="xml-container">
+    <h1 class="xml-title">XML DE USUARIO</h1>
+    <div class="editor-container">
+        {% if contenido_xml %}
+            <!-- Muestra el contenido XML en el editor -->
+            <textarea class="xml-editor" spellcheck="false" readonly>{{ contenido_xml }}</textarea>
+        {% else %}
+            <!-- Mensaje predeterminado si no hay contenido -->
+            <textarea class="xml-editor empty" spellcheck="false" readonly>No hay contenido XML disponible.</textarea>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+.editor-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #1a202c; /* Oscuro */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.editor-section h1 {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff; /* Blanco puro para contraste */
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #4a5568; /* Gris oscuro */
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    color: #060607; /* Gris claro para el texto */
+    background-color: #2d3748; /* Gris más oscuro */
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    background-color: #4a5568; /* Gris más oscuro */
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background-color: #2d3748; /* Gris aún más profundo */
+}
+
+.images-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.section-title {
+    font-size: 0.875rem;
+    color: #000000; /* Gris más suave */
+}
+
+.image-container {
+    aspect-ratio: 1;
+    background: #2d3748; /* Gris muy oscuro */
+    border: 1px solid #121213;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    background-color: #2d3748;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-icon {
+    width: 30%;
+    height: 30%;
+    color: #e2e8f0; /* Gris suave */
+}

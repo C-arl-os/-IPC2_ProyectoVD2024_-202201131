@@ -1,0 +1,17 @@
+{% extends "admin.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin/estadisticas.css' %}">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<div class="stats-container">
+    <h1 class="stats-title">Estadísticas de Actividad</h1>
+
+    <div class="stats-chart-container">
+        <h2 class="chart-title">Imágenes Procesadas y Editadas por Usuario</h2>
+        <div class="chart-wrapper">
+            {{ plot_div|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}

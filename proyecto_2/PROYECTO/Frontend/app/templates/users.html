@@ -1,0 +1,28 @@
+{% extends "admin.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin/users.css' %}">
+<div class="user-management">
+    <h1 class="title">Gestión de Usuarios - IPC-Art Studio</h1>
+    <div class="user-list">
+        {% if usuarios %}
+            {% for usuario in usuarios %}
+                <div class="user-card">
+                    <div class="avatar">
+                        <img src="{{usuario.perfil}}" alt="Foto de {{usuario.nombre}}">
+                    </div>
+                    <div class="details">
+                        <h2 class="name">{{usuario.nombre}}</h2>
+                        <p><strong>ID:</strong> {{usuario.id}}</p>
+                        <p><strong>Correo:</strong> {{usuario.correo}}</p>
+                        <p><strong>Teléfono:</strong> {{usuario.telefono}}</p>
+                        <p><strong>Dirección:</strong> {{usuario.direccion}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-users">No hay usuarios registrados actualmente.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
