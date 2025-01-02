@@ -1,6 +1,6 @@
-# 🔒 Unidad 8: Acceso a datos web
+# 🔒 Carlos Emanuel Sancir Reyes
 
-## 📚 Clase 17: Acceso a datos web
+## 📚 202201131
 
 _Fecha: 27-12-2024_
 
@@ -14,9 +14,3 @@ En esta clase se abordó el tema de Internet, redes y seguridad.
 - API
 - Seguridad y uso de API’s
 
-### 💻 Ejemplo de la Clase
-
-Lo puedes encontrar en:  [Clase17](./Clase17/)
-
-### 🎥 Grabación de la Clase
-**Clase 17**: []()
